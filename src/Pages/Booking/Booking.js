@@ -15,7 +15,7 @@ const Booking = () => {
   const [details, setDetails] = useState([]);
   const { id } = useParams();
   useEffect(() => {
-    fetch(`http://localhost:5000/offerings/${id}`)
+    fetch(`https://evil-spider-05883.herokuapp.com/offerings/${id}`)
       .then((res) => res.json())
       .then((data) => setDetails(data));
   }, []);
@@ -24,7 +24,7 @@ const Booking = () => {
     const orderDetails = details;
     data.order =  orderDetails;
     data.status = 'pending';
-    fetch('http://localhost:5000/myOrders', {
+    fetch('https://evil-spider-05883.herokuapp.com/myOrders', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

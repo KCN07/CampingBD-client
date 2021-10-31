@@ -6,14 +6,14 @@ const ManageBooking = () => {
     
 
     useEffect(() => {
-        fetch(`http://localhost:5000/bookings`)
+        fetch(`https://evil-spider-05883.herokuapp.com/bookings`)
         .then(res=>res.json())
         .then(data => setBookings(data))
 
     }, []);
 
     const handleUpdateOrder = id =>{
-        const url = `http://localhost:5000/orders/${id}`;
+        const url = `https://evil-spider-05883.herokuapp.com/orders/${id}`;
         const booking = bookings.filter(item => {
             return item._id === id;
         })
@@ -40,7 +40,7 @@ const ManageBooking = () => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if(proceed){
             
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://evil-spider-05883.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -67,7 +67,7 @@ const ManageBooking = () => {
                       <Card.Text>
                         {booking.order.description}
                       </Card.Text>
-                      <Card.Title>{booking.order.TotalCost}</Card.Title>
+                      <Card.Title>Total Cost: {booking.order.TotalCost} BDT</Card.Title>
                       <Button onClick={() => handleUpdateOrder(booking._id)} variant="primary" className="me-2">{booking.status}</Button>
                       <Button onClick={() => handleDeleteOrder(booking._id)} variant="warning">Cancel Booking</Button>
                     </Card.Body>

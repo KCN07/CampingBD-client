@@ -5,7 +5,7 @@ const Offerings = () => {
     const [offerings, setOfferings] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/offerings`)
+        fetch(`https://evil-spider-05883.herokuapp.com/offerings`)
         .then(res=>res.json())
         .then(data => setOfferings(data))
     }, [])

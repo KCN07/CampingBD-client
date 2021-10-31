@@ -7,7 +7,7 @@ const AddOfferings = () => {
 
   const onSubmit = (data) => {
     console.log(data)
-    fetch('http://localhost:5000/offerings', {
+    fetch('https://evil-spider-05883.herokuapp.com/offerings', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

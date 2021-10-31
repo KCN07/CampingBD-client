@@ -7,7 +7,7 @@ const MyOrders = () => {
     const {user} = useAuth();
     // console.log(user.email)
     useEffect(() => {
-        fetch(`http://localhost:5000/mybookings/${user.email}`)
+        fetch(`https://evil-spider-05883.herokuapp.com/mybookings/${user.email}`)
         .then(res=> res.json())
         .then(data=>{
             setOrders(data);
@@ -21,7 +21,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure, you want to delete?');
         if(proceed){
             
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://evil-spider-05883.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
